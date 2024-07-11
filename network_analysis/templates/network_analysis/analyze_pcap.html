@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analyze PCAP</title>
+</head>
+<body>
+    <h1>Upload a PCAP File for Analysis</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="pcap_file">
+        <button type="submit">Upload</button>
+    </form>
+
+    <h2>Analyzed Traffic</h2>
+    <table>
+        <tr>
+            <th>Timestamp</th>
+            <th>Source IP</th>
+            <th>Destination IP</th>
+            <th>Protocol</th>
+            <th>Length</th>
+        </tr>
+        {% for traffic in traffic %}
+        <tr>
+            <td>{{ traffic.timestamp }}</td>
+            <td>{{ traffic.src_ip }}</td>
+            <td>{{ traffic.dst_ip }}</td>
+            <td>{{ traffic.protocol }}</td>
+            <td>{{ traffic.length }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
