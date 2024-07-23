@@ -5,6 +5,15 @@ from django.http import HttpResponse
 from django.core.files.storage import FileSystemStorage
 from .models import NetworkTraffic
 
+def index(request):
+    return render(request, 'home.html')
+
+def about(request):
+    return render(request, 'about.html')
+
+def contact(request):
+    return render(request, 'contact.html')
+
 async def process_pcap(filepath):
     try:
         capture = pyshark.FileCapture(filepath)
@@ -38,9 +47,9 @@ async def analyze_pcap(request):
 
             # Fetch network traffic data after processing
             traffic = NetworkTraffic.objects.all()
-            return render(request, 'network_analysis/analyze_pcap.html', {'traffic': traffic})
+            return render(request, 'analyze_pcap.html', {'traffic': traffic})
 
         except Exception as e:
             return HttpResponse(f"Error processing pcap: {str(e)}", status=500)
     
-    return render(request, 'network_analysis/analyze_pcap.html')
+    return render(request, 'analyze_pcap.html')

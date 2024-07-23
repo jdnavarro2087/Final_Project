@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Network Packets{% endblock title %}
+
+{% block header %}Home Page{% endblock header %}
+{% load static %}
+
+{% block content %}
+<div class="container-home-body page">
+    <div class="image-container">
+        <img src="{% static 'img/background1_home.jpg' %}" class="home-pic" alt="">
+    </div>
+    <div class="text-container">
+        <p class="home-body-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, exercitationem odio ratione perferendis ipsum, vitae est earum modi placeat fugit eaque, nisi aliquid voluptas sunt error labore voluptatem voluptates repellat!</p>
+    </div>
+</div>
+{% endblock content %}

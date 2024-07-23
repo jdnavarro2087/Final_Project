@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact - Network Packets{% endblock title %}
+
+{% block header %}Contact Page{% endblock header %}
+{% load static %}
+
+{% block content %}
+<div class="page">
+<h1>This is the Contact page!</h1>
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Enter your email:</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Write your message:</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+</div>
+{% endblock content %}
