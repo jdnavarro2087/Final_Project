@@ -20,13 +20,13 @@
             <th>Protocol</th>
             <th>Length</th>
         </tr>
-        {% for traffic in traffic %}
+        {% for packet in traffic %}
         <tr>
-            <td>{{ traffic.timestamp }}</td>
-            <td>{{ traffic.src_ip }}</td>
-            <td>{{ traffic.dst_ip }}</td>
-            <td>{{ traffic.protocol }}</td>
-            <td>{{ traffic.length }}</td>
+            <td>{{ packet.timestamp }}</td>
+            <td>{{ packet.src_ip }}</td>
+            <td>{{ packet.dst_ip }}</td>
+            <td>{{ packet.protocol }}</td>
+            <td>{{ packet.length }}</td>
         </tr>
         {% endfor %}
     </table>

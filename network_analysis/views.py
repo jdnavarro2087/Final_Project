@@ -25,8 +25,7 @@ async def process_pcap(filepath):
             capture.close_async(),
             capture._get_tshark_process()
         )
-
-async def analyze_pcap(request):
+def analyze_pcap(request):
     if request.method == 'POST' and request.FILES.get('pcap_file'):
         pcap_file = request.FILES['pcap_file']
         fs = FileSystemStorage()
@@ -34,7 +33,7 @@ async def analyze_pcap(request):
         filepath = fs.path(filename)
         
         try:
-            await process_pcap(filepath)  # Await the async function directly
+            process_pcap(filepath)  # Await the async function directly
 
             # Fetch network traffic data after processing
             traffic = NetworkTraffic.objects.all()
