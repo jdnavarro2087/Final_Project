@@ -10,14 +10,32 @@
     <h1>About our service...</h1>
     <h2>Intruder Alert: Network Traffic Analyzer</h2>
     <p id="about">Welcome to IntruderAlert, your go-to solution for network traffic analysis and intrusion detection. Our platform allows users to upload and analyze pcap (packet capture) files effortlessly. Whether you're monitoring network security or investigating potential intrusions, IntruderAlert provides detailed insights and comprehensive analysis of network packets, helping you stay ahead of potential threats. Upload your pcap files and explore detailed traffic reports, including timestamps, source and destination IPs, protocols, and payloads.</p>
-</div>
-<div class="card-container">
-    {% for creator in creators %}
-    <div class="card">
-        <img src="XXX" alt=""> <!--src="{{ creator.image }}" alt="{{ creator.name }}"-->
-        <h2>{{ creator.name }}</h2> 
-        <p>{{ creator.bio }}</p>
+    <div class="about-cards">
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
     </div>
-    {% endfor %}
-</div>
+
+    </div>
 {% endblock content %}

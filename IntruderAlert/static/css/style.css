@@ -159,24 +159,12 @@ footer {
 /*********************************
 Creator Style
 **********************************/
-.card { 
-    border: 1px solid #ddd; 
-    border-radius: 8px; 
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); 
-    padding: 16px; 
-    margin: 16px; 
-    text-align: center; 
-    width: 200px; 
-} 
-
-.card img { 
-    border-radius: 50%; 
-    width: 100px; 
-    height: 100px; 
-} 
-
-.card-container { 
-    display: flex; 
-    justify-content: space-around; 
+.about-cards {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 4rem;
 }
 
+#table {
+    color: #333;
+}

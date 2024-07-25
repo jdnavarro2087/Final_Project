@@ -34,6 +34,8 @@ async def process_pcap(filepath):
             capture.close_async(),
             capture._get_tshark_process()
         )
+
+        
 def analyze_pcap(request):
     if request.method == 'POST' and request.FILES.get('pcap_file'):
         pcap_file = request.FILES['pcap_file']
