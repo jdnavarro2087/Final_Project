@@ -1,13 +1,9 @@
-
-{% extends 'base.html' %}
-
-{% block title %}change me later{% endblock title %}
-
-{% block header %}analyze page{% endblock header %}
-{% load static %}
-
-{% block content %}
-<div class="container-upload-body page">
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analyze PCAP</title>
+</head>
+<body>
     <h1>Upload a PCAP File for Analysis</h1>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
@@ -24,15 +20,15 @@
             <th>Protocol</th>
             <th>Length</th>
         </tr>
-        {% for traffic in traffic %}
+        {% for packet in traffic %}
         <tr>
-            <td>{{ traffic.timestamp }}</td>
-            <td>{{ traffic.src_ip }}</td>
-            <td>{{ traffic.dst_ip }}</td>
-            <td>{{ traffic.protocol }}</td>
-            <td>{{ traffic.length }}</td>
+            <td>{{ packet.timestamp }}</td>
+            <td>{{ packet.src_ip }}</td>
+            <td>{{ packet.dst_ip }}</td>
+            <td>{{ packet.protocol }}</td>
+            <td>{{ packet.length }}</td>
         </tr>
         {% endfor %}
     </table>
-</div>
-    {% endblock content %}
+</body>
+</html>

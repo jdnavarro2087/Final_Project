@@ -10,14 +10,6 @@ body {
 
 }
 
-.container-home-body {
-    background: linear-gradient(-70deg, #a2facf 0%, #64acff 100%);
-    color: white;
-    height: 30.45rem;
-    padding: 2rem;
-
-}
-
 .container {
     max-width: 800px;
     margin: 0 auto;
@@ -30,7 +22,11 @@ body {
     min-height: calc(100vh - 155px);
 }
 
-h1 {
+h1, h2 {
+    color: #333;
+}
+
+#about {
     color: #333;
 }
 
@@ -67,7 +63,12 @@ p {
 /***************************************
      HOME STYLE
 ***************************************/
+
 .container-home-body {
+    background: linear-gradient(-70deg, #a2facf 0%, #64acff 100%);
+    color: white;
+    height: 30.45rem;
+    padding: 2rem;
     display: flex;
 }
 
@@ -112,6 +113,39 @@ p {
         margin-top: 0.7rem;
     }
 }
+/*********************************
+Upload
+**********************************/
+.container-upload-body {
+    flex-direction: column;
+    background: linear-gradient(-70deg, #a2facf 0%, #64acff 100%);
+    color: white;
+    height: 30.45rem;
+    padding: 2rem;
+}
+/*********************************
+About
+**********************************/
+.container-about-body {
+    background: linear-gradient(-70deg, #a2facf 0%, #64acff 100%);
+    color: white;
+    height: 30.45rem;
+    padding: 2rem;
+}
+
+
+
+
+/*********************************
+Contact
+**********************************/
+.container-contact-body {
+    background: linear-gradient(-70deg, #a2facf 0%, #64acff 100%);
+    color: white;
+    height: 30.45rem;
+    padding: 2rem;
+}
+
 
 main {
     min-height: 69vh;
@@ -120,5 +154,29 @@ main {
 }
 footer {
     margin-top: auto;
+}
+
+/*********************************
+Creator Style
+**********************************/
+.card { 
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); 
+    padding: 16px; 
+    margin: 16px; 
+    text-align: center; 
+    width: 200px; 
+} 
+
+.card img { 
+    border-radius: 50%; 
+    width: 100px; 
+    height: 100px; 
+} 
+
+.card-container { 
+    display: flex; 
+    justify-content: space-around; 
 }
 
