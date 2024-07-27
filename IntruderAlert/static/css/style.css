@@ -196,7 +196,7 @@ Wireshark styling
 
 .container-body {
     background: linear-gradient(-70deg, #a2facf 0%, #64acff 100%);
-    color: white;
+    color: #333;
     max-width: 100%; /* Ensure it does not exceed container width */
     padding: 3rem;
     box-sizing: border-box; /* Include padding in width calculations */
