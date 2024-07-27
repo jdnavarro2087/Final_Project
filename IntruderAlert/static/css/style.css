@@ -168,3 +168,38 @@ Creator Style
 #table {
     color: #333;
 }
+
+/**********************
+Table styling
+**********************/
+
+.table-row-spacing tr {
+    margin-bottom: 1rem;
+}
+
+.table-row-spacing td {
+    padding: 1rem;
+}
+
+
+/***********************
+Wireshark styling
+************************/
+
+.main-container {
+    flex: 1; /* Allow the main content to fill available space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.container-body {
+    background: linear-gradient(-70deg, #a2facf 0%, #64acff 100%);
+    color: white;
+    max-width: 100%; /* Ensure it does not exceed container width */
+    padding: 3rem;
+    box-sizing: border-box; /* Include padding in width calculations */
+    width: 100%; /* Make sure it takes full width of the container */
+    min-height: 30.45rem; 
+}

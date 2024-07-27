@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}How to Use WireShark{% endblock title %}
+{% load static %}
+
+{% block content %}
+<div class="main-container">
+    <div class="container-body">
+        <h1>How to use Wireshark to collect pcap files</h1>
+        <p>Wireshark is a powerful network protocol analyzer that allows you to capture and inspect network packets. Follow these steps to collect your own pcap files using Wireshark:</p>
+
+        <h2>Step 1: Download and Install Wireshark</h2>
+        <p>Visit the <a href="https://www.wireshark.org/download.html" target="blank">Wireshark download page</a> to download the installer for your operatings system follow the instructions provided on the website</p>
+
+        <h2>Step 2: Open Wireshark</h2>
+        <p>Once installed, open wireshark. You will be presented with a list of network interfaces on your computer.</p>
+
+        <h2>Step 3: Start Capturing Packets</h2>
+        <p>Select the network interface you want to capture packets from and click the <strong>Start Capturing</strong> button (the shark fin icon). Wireshark will then begin capturing network traffic</p>
+
+        <h2>Step 4: Stop Capturing Packets</h2>
+        <p>when you have captured enough packets, click the <strong>Stop Capturing Packets</strong> button (the red square icon) to stop the capture.</p>
+
+        <h2>step 5: Save the Capture File</h2>
+        <p>To Save your captured packets, go to <strong>File</strong> &gt; <strong>Save As</strong>. Choose a location and a file name, then click <strong>Save</strong>. Your capture file will be saved with a .pcap extension.</p>
+
+        <p>For more detailed instructions and advanced features, refer to the <a href="https://www.wireshark.org/docs/wsug_html_chunked/" target="_blank">Wireshark User's Guide</a>. </p>
+    </div>
+</div>
+{% endblock %}

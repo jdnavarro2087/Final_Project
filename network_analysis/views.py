@@ -14,6 +14,9 @@ def about(request):
 def contact(request):
     return render(request, 'contact.html')
 
+def wireshark_instructions(request):
+    return render(request, 'wireshark_instructions.html')
+
 async def process_pcap(filepath):
     try:
         capture = pyshark.FileCapture(filepath)
