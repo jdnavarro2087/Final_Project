@@ -1,13 +1,11 @@
 appdirs==1.4.4
 asgiref==3.8.1
-asyncio==3.4.3
-Django==5.0.7
+backports.zoneinfo==0.2.1
+Django==4.2.14
 lxml==5.2.2
 packaging==24.1
 pyshark==0.6
-scapy==2.5.0
 sqlparse==0.5.1
 termcolor==2.4.0
-
-
-# Note: wireshark must be installed seperatly 
+typing-extensions==4.12.2
+whitenoise==6.7.0
