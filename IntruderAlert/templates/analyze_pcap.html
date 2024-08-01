@@ -11,10 +11,11 @@
     <h1>Upload a PCAP File for Analysis</h1>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        <input type="file" name="pcap_file"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/></svg>
-        <button class="btn btn-dark" type="submit">Upload</button> <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M440-200h80v-167l64 64 56-57-160-160-160 160 57 56 63-63v167ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"/></svg>
+        <input id="upload" type="file" name="pcap_file">
+        <!-- <label id="upload-label" for="upload">Click me to upload a file</label> -->
+        <button id="display" class="btn btn-light" type="submit">Display</button>
     </form>
-
+    {% if traffic.length %}
     <h2>Analyzed Traffic</h2>
     <table id="table" class="table-row-spacing">
         <tr>
@@ -24,14 +25,15 @@
             <th>Protocol</th>
             <th>Length</th>
         </tr>
+    {% endif %}
         {% for traffic in traffic %}
-        <tr>
-            <td>{{ traffic.timestamp }}</td>
-            <td>{{ traffic.src_ip }}</td>
-            <td>{{ traffic.dst_ip }}</td>
-            <td>{{ traffic.protocol }}</td>
-            <td>{{ traffic.length }}</td>
-        </tr>
+            <tr>
+                <td>{{ traffic.timestamp }}</td>
+                <td>{{ traffic.src_ip }}</td>
+                <td>{{ traffic.dst_ip }}</td>
+                <td>{{ traffic.protocol }}</td>
+                <td>{{ traffic.length }}</td>
+            </tr>
         {% endfor %}
     </table>
 </div>

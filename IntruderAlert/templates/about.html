@@ -1,41 +1,29 @@
 {% extends 'base.html' %}
 
-{% block title %}Home - Network Packets{% endblock title %}
+{% block title %}About - Network Packets{% endblock title %}
 
-{% block header %}Home Page{% endblock header %}
+{% block header %}About Page{% endblock header %}
 {% load static %}
 
 {% block content %}
 <div class="container-about-body page">
-    <h1>About our service...</h1>
-    <h2>Intruder Alert: Network Traffic Analyzer</h2>
-    <p id="about">Welcome to IntruderAlert, your go-to solution for network traffic analysis and intrusion detection. Our platform allows users to upload and analyze pcap (packet capture) files effortlessly. Whether you're monitoring network security or investigating potential intrusions, IntruderAlert provides detailed insights and comprehensive analysis of network packets, helping you stay ahead of potential threats. Upload your pcap files and explore detailed traffic reports, including timestamps, source and destination IPs, protocols, and payloads.</p>
-    <div class="about-cards">
-        <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-    </div>
+    <!-- <h2>Background Information</h2> -->
+    <h3>PCAP Files (Packet Capture Files)</h3>
+    <p class="about">A standard format for capturing and storing network traffic, these files contain raw network packets, including headers and payloads, that have been intercepted over a network. Tools like Wireshark or tcpdump are commonly used to capture and save these packets in pcap format.</p><br>
+    <h3>What Can You Do?</h3>
+    <p class="about">IntruderAlert is a user-friendly web application designed to simplify the analysis of pcap files.
+      
+      Users can easily upload their pcap files through the website, which then automatically processes and extracts vital information such as timestamps, IP addresses, protocols, and payloads. 
+      The results are displayed in a clear, detailed format, making it easy to understand network traffic.
+
+    <h3>Why Us?</h3>
+       <p class="about">Integrated with Intrusion Detection Systems (IDS), IntruderAlert provides real-time alerts for potential security threats, 
+       <!-- enabling quick responses to malicious activities. Additionally,  -->
+       users can review historical data to identify trends and conduct long-term forensics. 
+       Customizable and scalable, IntruderAlert caters to both small and large networks, 
+       <!-- enhancing users' ability to detect and respond to security threats effectively. -->
+      </p>
+
 
     </div>
 {% endblock content %}

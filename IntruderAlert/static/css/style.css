@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
@@ -19,14 +21,13 @@ body {
 }
 
 .page {
-    min-height: calc(100vh - 155px);
+    min-height: calc(100vh - 193px);
 }
 
-h1, h2 {
+h1, h2, h3 {
     color: #333;
 }
-
-#about {
+.about {
     color: #333;
 }
 
@@ -52,6 +53,23 @@ p {
 .navbar a {
     color: white !important;
 }
+#navbar-name {
+    font-family: 'Orbitron', sans-serif; /* Techy font */
+    font-size: 36px; /* Large font size */
+    color: #64acff; /* Bright green color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Darker shadow for 3D effect */
+    background: linear-gradient(135deg, #333333, #111111); /* Dark gradient background */
+    padding: 10px 20px; /* Padding for spacing */
+    border-radius: 10px; /* Rounded corners */
+    border: 2px solid #64acff; /* Green border */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
+    margin-left: 17px;
+}
+
+#navbar-name:hover {
+    transform: scale(1.1); /* Slightly enlarges on hover */
+}
+
 
 .roboto-bold-italic {
     font-family: "Roboto", sans-serif;
@@ -67,9 +85,9 @@ p {
 .container-home-body {
     background: linear-gradient(-70deg, #a2facf 0%, #64acff 100%);
     color: white;
-    height: 30.45rem;
     padding: 2rem;
     display: flex;
+    height: 30.45rem;
 }
 
 .container-home-body .image-container {
@@ -120,7 +138,6 @@ Upload
     flex-direction: column;
     background: linear-gradient(-70deg, #a2facf 0%, #64acff 100%);
     color: white;
-    height: 30.45rem;
     padding: 2rem;
 }
 /*********************************
@@ -129,7 +146,7 @@ About
 .container-about-body {
     background: linear-gradient(-70deg, #a2facf 0%, #64acff 100%);
     color: white;
-    height: 30.45rem;
+    /* height: 30.45rem; */
     padding: 2rem;
 }
 
@@ -142,15 +159,15 @@ Contact
 .container-contact-body {
     background: linear-gradient(-70deg, #a2facf 0%, #64acff 100%);
     color: white;
-    height: 30.45rem;
     padding: 2rem;
 }
 
 
 main {
-    min-height: 69vh;
+    min-height: calc(100vh - 193px);
     display: flex;
     flex-direction: column;
+    padding: 0 !important;
 }
 footer {
     margin-top: auto;
@@ -201,5 +218,22 @@ Wireshark styling
     padding: 3rem;
     box-sizing: border-box; /* Include padding in width calculations */
     width: 100%; /* Make sure it takes full width of the container */
-    min-height: 30.45rem; 
+}
+#upload::-webkit-file-upload-button{
+    background-color: white;
+    border-radius: 8px;
+}
+ /* #upload-label{
+    background-color: white;
+    border-radius: 8px;
+    color: black;
+    border-width: 2px;
+ } */
+/* #upload{
+    display: none;
+} */
+#display {
+    border-radius: 8px;
+    border-width: 2px;
+    border-color: black;
 }
