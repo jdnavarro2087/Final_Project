@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-dlnng+svh*&=c%xt9$-e8c&_%yf7za=%p*y6xdw-f+nr8rr86b
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['network-analysis.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['network-analysis-721cec091404.herokuapp.com']
+
 
 # Application definition
 
@@ -75,8 +76,12 @@ WSGI_APPLICATION = 'IntruderAlert.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',  # Adjust this path as necessary
+    }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
