@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-
+import os
 from pathlib import Path
 import django_heroku
 import dj_database_url
@@ -128,10 +128,10 @@ DEBUG = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    BASE_DIR / 'IntruderAlert/static',
+    os.path.join(BASE_DIR, 'IntruderAlert/static'),
 ]
 
-STATIC_ROOT = BASE_DIR  / 'staticfiles'
+STATIC_ROOT = os.path.join( BASE_DIR  , 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
@@ -140,3 +140,8 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 ALLOWED_HOSTS = ['network-analysis.herokuapp.com', 'localhost', '127.0.0.1']
+
+
+if 'DYNO' in os.environ:
+    import django_heroku
+    django_heroku.settings(locals())
