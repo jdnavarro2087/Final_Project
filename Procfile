@@ -1,1 +1,1 @@
-web: gunicorn network-analysis.wsgi --log-file -
+web: gunicorn IntruderAlert.wsgi --log-file -
