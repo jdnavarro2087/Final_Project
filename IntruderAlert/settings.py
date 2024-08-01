@@ -9,17 +9,13 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
+
 import os
 from pathlib import Path
-import django_heroku
 import dj_database_url
-
-django_heroku.settings(locals())
-
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
@@ -30,9 +26,7 @@ SECRET_KEY = 'django-insecure-dlnng+svh*&=c%xt9$-e8c&_%yf7za=%p*y6xdw-f+nr8rr86b
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]']
-
+ALLOWED_HOSTS = ['network-analysis.herokuapp.com', 'localhost', '127.0.0.1']
 
 # Application definition
 
@@ -54,7 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',  # For heroku deployment
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # For Heroku deployment
 ]
 
 ROOT_URLCONF = 'IntruderAlert.urls'
@@ -77,18 +71,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'IntruderAlert.wsgi.application'
 
-
-
-
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-
-# Changed Database for heroku deployment
 
 DATABASES = {
     'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -107,7 +95,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
@@ -128,10 +115,10 @@ DEBUG = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'IntruderAlert/static'),
+    BASE_DIR / 'IntruderAlert/static',
 ]
 
-STATIC_ROOT = os.path.join( BASE_DIR  , 'staticfiles')
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
@@ -139,9 +126,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-ALLOWED_HOSTS = ['network-analysis.herokuapp.com', 'localhost', '127.0.0.1']
-
-
+# Heroku-specific settings
 if 'DYNO' in os.environ:
     import django_heroku
     django_heroku.settings(locals())
