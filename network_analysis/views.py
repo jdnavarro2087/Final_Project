@@ -17,7 +17,7 @@ def contact(request):
 def wireshark_instructions(request):
     return render(request, 'wireshark_instructions.html')
 
-async def process_pcap(filepath):
+def process_pcap(filepath):
     try:
         capture = pyshark.FileCapture(filepath)
         for packet in capture:
@@ -42,7 +42,7 @@ async def process_pcap(filepath):
         print("\n\n\n\n\n")
         raise e
     finally:
-        await asyncio.gather(
+        asyncio.gather(
             capture.close_async(),
             capture._get_tshark_process()
         )
