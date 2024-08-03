@@ -15,26 +15,29 @@
         <!-- <label id="upload-label" for="upload">Click me to upload a file</label> -->
         <button id="display" class="btn btn-light" type="submit">Display</button>
     </form>
-    {% if traffic.length %}
-    <h2>Analyzed Traffic</h2>
-    <table id="table" class="table-row-spacing">
-        <tr>
-            <th>Timestamp</th>
-            <th>Source IP</th>
-            <th>Destination IP</th>
-            <th>Protocol</th>
-            <th>Length</th>
-        </tr>
-    {% endif %}
-        {% for traffic in traffic %}
+    
+        <h2>Analyzed Traffic</h2>
+        <table id="table" class="table-row-spacing">
+
+            {% if traffic %}
             <tr>
-                <td>{{ traffic.timestamp }}</td>
-                <td>{{ traffic.src_ip }}</td>
-                <td>{{ traffic.dst_ip }}</td>
-                <td>{{ traffic.protocol }}</td>
-                <td>{{ traffic.length }}</td>
+                <th>Timestamp</th>
+                <th>Source IP</th>
+                <th>Destination IP</th>
+                <th>Protocol</th>
+                <th>Length</th>
             </tr>
-        {% endfor %}
-    </table>
+            {% endif %}
+            {% for traffic in traffic %}
+                <tr>
+                    <td>{{ traffic.timestamp }}</td>
+                    <td>{{ traffic.src_ip }}</td>
+                    <td>{{ traffic.dst_ip }}</td>
+                    <td>{{ traffic.protocol }}</td>
+                    <td>{{ traffic.length }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    
 </div>
     {% endblock content %}

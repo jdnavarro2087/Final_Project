@@ -26,7 +26,7 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', '6vaxm2ciy74b^4s7p!ngew!ih618r5(a41_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DJANGO_DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['network-analysis-721cec091404.herokuapp.com']
+ALLOWED_HOSTS = ['network-analysis-721cec091404.herokuapp.com', '127.0.0.1', 'localhost']
 
 # Application definition
 

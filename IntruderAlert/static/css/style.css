@@ -237,3 +237,55 @@ Wireshark styling
     border-width: 2px;
     border-color: black;
 }
+
+/****************************
+Card styling
+*****************************/
+
+.container-contact-body {
+    background: linear-gradient(-70deg, #a2facf 0%, #64acff 100%);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.8); /* White background with 80% opacity */
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05); /* Slightly enlarge the card on hover */
+}
+
+.card-img-top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 300px;
+
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.btn-primary {
+    background-color: #64acff;
+    border-color: #64acff;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #a2facf;
+    border-color: #a2facf;
+}
