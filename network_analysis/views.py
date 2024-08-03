@@ -28,7 +28,11 @@ async def process_pcap(filepath):
                     protocol=packet.transport_layer,
                     length=packet.length
                 )
-            except AttributeError:
+            except AttributeError as e:
+                print("\n\n\n\n\n")
+                print("***error ")
+                print(e)
+                print("\n\n\n\n\n")
                 continue
     except Exception as e:
         raise e
@@ -45,6 +49,11 @@ def analyze_pcap(request):
         fs = FileSystemStorage()
         filename = fs.save(pcap_file.name, pcap_file)
         filepath = fs.path(filename)
+        print("\n\n\n\n")
+        print(f"fileName {filename}")
+        print(f"filepath {filepath}")
+        print("\n\n\n\n")
+
         
         try:
             process_pcap(filepath)  # Await the async function directly
